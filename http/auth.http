@@ -1,0 +1,19 @@
+
+###
+## @name register
+POST http://localhost:3001/api/auth/register 
+Content-Type: application/json
+
+{
+    "email":"boris@gmail.com",
+    "name":"Boris Rose",
+    "password":"caroline"
+}
+
+@TOKEN = eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYm9yaXNAZ21haWwuY29tIiwiZXhwIjoxNzE5NDI3ODk3LCJpYXQiOjE3MTkzNDE0OTd9.LPokcsG0yuvZ6CrEELazkg6ybSfmsyHZe1e-g0J2310
+
+
+
+###
+http://localhost:3001/api/auth/me
+Authorization: Bearer {{TOKEN}}

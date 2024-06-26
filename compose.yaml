@@ -1,0 +1,10 @@
+services:
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - 'MYSQL_DATABASE=chatop'
+      - 'MYSQL_PASSWORD=caroline'
+      - 'MYSQL_ROOT_PASSWORD=root'
+      - 'MYSQL_USER=boris'
+    ports:
+      - '3306:3306'
