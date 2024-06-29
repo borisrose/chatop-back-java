@@ -20,5 +20,6 @@ Une fois le serveur lancé, vous pouvez démarrer l'application frontend qui va 
 
 ## Le Swagger 
 
-Lien vers le swagger (http://localhost:3001/swagger-ui.html)
+[Lien vers le swagger](http://localhost:3001/swagger-ui.html)
+<br/>
 PS: http://localhost:3001/swagger-ui.html
