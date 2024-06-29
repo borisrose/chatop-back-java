@@ -17,3 +17,8 @@ Une fois cela fait l'application va tourner sur le port 3001
 ## Utiliser le frontend 
 
 Une fois le serveur lancé, vous pouvez démarrer l'application frontend qui va consommer l'api.
+
+## Le Swagger 
+
+Lien vers le swagger (http://localhost:3001/swagger-ui.html)
+PS: http://localhost:3001/swagger-ui.html
