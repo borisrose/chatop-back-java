@@ -36,13 +36,43 @@ public class RentalService {
     }
 
     public String updateRental(final String id, final Rental rental){
-        if(rentalRepository.existsById(Integer.parseInt(id))){
-            rental.setId(Integer.parseInt(id));
-            rentalRepository.save(rental);
-            return "rental updated";
-        } else {
-            return "not existing rental";
-        }
+
+            Optional<Rental> exRentalOptional = rentalRepository.findById(Integer.parseInt(id));
+            if(exRentalOptional.isPresent()){
+               Rental exRental = exRentalOptional.get();
+
+                if(rental.getDescription() == null ){
+                    rental.setDescription(exRental.getDescription());
+                } 
+
+                if(rental.getName() == null){
+                    rental.setName(exRental.getName());
+                }
+
+                if(rental.getPicture() == null){
+                    rental.setPicture(exRental.getPicture());
+                }
+
+                if(rental.getOwner_id() == null){
+                    rental.setOwner_id(exRental.getOwner_id());
+                }
+
+                if(rental.getPrice() == null){
+                    rental.setPrice(exRental.getPrice());
+                }
+
+                if(rental.getSurface() ==  null){
+                    rental.setSurface(exRental.getSurface());
+                }
+
+                rental.setId(Integer.parseInt(id));
+                rentalRepository.save(rental);
+                return "rental updated";
+            } else {
+                return "not existing rental";
+            }
+        
+        
     
     }
 

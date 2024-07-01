@@ -33,7 +33,7 @@ public class TestFilter implements Filter {
         boolean hasAccess = isUserAllowed(testId); 
 
         if (hasAccess) {
-            System.out.print("✅accepted\n"+ request.getRequestURL());
+
             filterChain.doFilter(request, response); 
             return;
         }

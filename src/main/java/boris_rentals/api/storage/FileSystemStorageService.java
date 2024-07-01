@@ -30,7 +30,7 @@ public class FileSystemStorageService implements StorageService {
         }
 
         this.rootLocation = Paths.get(properties.getLocation());
-		System.out.print("✅ rootLocation " + this.rootLocation);
+
     }
 
     @Override

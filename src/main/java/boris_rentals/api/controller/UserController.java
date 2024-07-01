@@ -58,12 +58,11 @@ public class UserController {
 
     @GetMapping(path = "/auth/me")
     public ResponseEntity<UserDto> getCurrentUser(@RequestHeader(name = "Authorization") String authorizationHeader) {
-        System.out.println(authorizationHeader);
+       
         String jwtToken = authorizationHeader.replace("Bearer ", "");
         Jwt jwt = customEncoderService.jwtDecoder().decode(jwtToken);
         String username = jwt.getSubject(); 
         User user = userService.getUserByEmail(username);
-        System.out.print(user);
         UserDto userDto = convertToDto(user);
         if(userDto != null){
             return ResponseEntity.ok(userDto);

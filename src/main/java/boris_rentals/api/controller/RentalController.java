@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import boris_rentals.api.controller.RentalController.RentalMessage;
 import boris_rentals.api.dto.RentalDto;
 import boris_rentals.api.model.Rental;
 import boris_rentals.api.model.User;
@@ -21,14 +20,14 @@ import boris_rentals.api.services.UserService;
 import boris_rentals.api.storage.StorageService;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -69,7 +68,7 @@ public class RentalController {
     public ResponseEntity<RentalsResponse> getAllRentals() {
 
         List<Rental> rentals = rentalService.getAllRentals();
-        System.out.print(rentals);
+  
         if(rentals != null){
             List<RentalDto> rentalDtos = rentals.stream().map(this::convertToDto).collect(Collectors.toList());
             return ResponseEntity.ok(new RentalsResponse(rentalDtos));
